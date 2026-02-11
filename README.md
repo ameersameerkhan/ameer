@@ -23,4 +23,6 @@ Static HTML, CSS, vanilla JS. Zero dependencies. Built with `node scripts/build.
 
 ## License
 
-Content and code in this repository are personal work. Feel free to use the site structure as a starting point for your own.
+The site code, templates, and build tooling are open for reuse — take them as a starting point for your own site.
+
+All written content, images, and other creative work in this repository are copyright Ameer Khan. All rights reserved.
