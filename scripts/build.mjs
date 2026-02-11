@@ -709,6 +709,10 @@ cpSync(join(ASSETS, 'js', 'theme-init.js'), join(DOCS, 'assets', 'js', 'theme-in
 if (existsSync(join(ASSETS, 'images'))) {
   cpSync(join(ASSETS, 'images'), join(DOCS, 'assets', 'images'), { recursive: true });
 }
+// Copy fonts folder if it exists
+if (existsSync(join(ASSETS, 'fonts'))) {
+  cpSync(join(ASSETS, 'fonts'), join(DOCS, 'assets', 'fonts'), { recursive: true });
+}
 
 // 15. CNAME — derive domain from SITE_URL (strips protocol)
 const cnameDomain = SITE_URL.replace(/^https?:\/\//, '');
