@@ -220,6 +220,16 @@ function markdownToHtml(md, allowHtml = false) {
     }
   }
 
+  // Post-process: merge img-only <p> + italic-only <p> into <figure>
+  for (let b = 0; b < blocks.length - 1; b++) {
+    const imgMatch = blocks[b].match(/^<p>(<img [^>]+>)<\/p>$/);
+    const capMatch = blocks[b + 1]?.match(/^<p><em>(.+?)<\/em><\/p>$/);
+    if (imgMatch && capMatch) {
+      blocks[b] = `<figure>${imgMatch[1]}<figcaption>${capMatch[1]}</figcaption></figure>`;
+      blocks.splice(b + 1, 1);
+    }
+  }
+
   return blocks.join('\n');
 }
 
@@ -409,7 +419,29 @@ function renderPage(baseTemplate, contentHtml, vars) {
   delete allVars._depth;
   delete allVars._jsonLdExtra;
 
-  return render(baseTemplate, allVars);
+  // Derive page path from canonical for nav active state
+  const pagePath = new URL(vars.canonical).pathname;
+  const navPaths = {
+    [`${root}`]: '/',
+    [`${root}about/`]: '/about/',
+    [`${root}writing/`]: '/writing/',
+    [`${root}now/`]: '/now/',
+  };
+
+  let finalHtml = render(baseTemplate, allVars);
+
+  // Inject aria-current="page" on matching nav link
+  for (const [href, canonical] of Object.entries(navPaths)) {
+    if (pagePath === canonical) {
+      finalHtml = finalHtml.replace(
+        `<a href="${href}">`,
+        `<a href="${href}" aria-current="page">`
+      );
+      break;
+    }
+  }
+
+  return finalHtml;
 }
 
 // ═══════════════════════════════════════════════════════════════════

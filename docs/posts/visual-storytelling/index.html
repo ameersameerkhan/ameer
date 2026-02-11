@@ -44,6 +44,7 @@
   
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="container">
       <nav class="site-nav" aria-label="Main navigation">
@@ -56,7 +57,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container">
     <article>
   <header>
     <h1>Visual Storytelling</h1>
@@ -80,8 +81,7 @@
 <p>Place your image files in the <code>assets/images/</code> folder and reference them with an absolute path starting from <code>/</code>. The build script copies everything in that folder into the published site automatically.</p>
 <h2>Diagrams and figures</h2>
 <p>Diagrams are especially useful for showing how parts of a system relate to each other. Here is a simple diagram of this site's build pipeline:</p>
-<p><img src="/assets/images/diagram.svg" alt="Diagram showing the build pipeline from Markdown to static HTML" loading="lazy"></p>
-<p><em>Figure 1: Markdown files pass through the build script and become static HTML in the docs folder.</em></p>
+<figure><img src="/assets/images/diagram.svg" alt="Diagram showing the build pipeline from Markdown to static HTML" loading="lazy"><figcaption>Figure 1: Markdown files pass through the build script and become static HTML in the docs folder.</figcaption></figure>
 <p>The italic line below the image acts as a caption. There is no special caption syntax in Markdown, but a simple <code><em>italic paragraph</em></code> directly after the image works well visually.</p>
 <h2>Best practices</h2>
 <p>A few guidelines worth keeping in mind:</p>
