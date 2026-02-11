@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="200" viewBox="0 0 720 200">
+  <rect width="720" height="200" fill="#f5f4f2" rx="8"/>
+  <!-- Markdown box -->
+  <rect x="40" y="60" width="140" height="80" fill="#fff" stroke="#c2c1bf" stroke-width="2" rx="6"/>
+  <text x="110" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Markdown</text>
+  <text x="110" y="118" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="11" fill="#5c5c5c">.md files</text>
+  <!-- Arrow 1 -->
+  <line x1="190" y1="100" x2="260" y2="100" stroke="#9a9a9a" stroke-width="2"/>
+  <polygon points="260,94 275,100 260,106" fill="#9a9a9a"/>
+  <!-- Build box -->
+  <rect x="280" y="60" width="160" height="80" fill="#fff" stroke="#1a5c3a" stroke-width="2" rx="6"/>
+  <text x="360" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1a5c3a">Build Script</text>
+  <text x="360" y="118" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="11" fill="#5c5c5c">build.mjs</text>
+  <!-- Arrow 2 -->
+  <line x1="450" y1="100" x2="520" y2="100" stroke="#9a9a9a" stroke-width="2"/>
+  <polygon points="520,94 535,100 520,106" fill="#9a9a9a"/>
+  <!-- HTML box -->
+  <rect x="540" y="60" width="140" height="80" fill="#fff" stroke="#c2c1bf" stroke-width="2" rx="6"/>
+  <text x="610" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Static HTML</text>
+  <text x="610" y="118" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="11" fill="#5c5c5c">/docs</text>
+</svg>

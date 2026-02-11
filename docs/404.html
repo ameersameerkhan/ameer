@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' 'unsafe-inline' ; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
+  <title>Page not found — Think Ameer</title>
+  <meta name="description" content="The page you are looking for does not exist.">
+  <link rel="canonical" href="http://localhost:3000/404.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Page not found">
+  <meta property="og:description" content="The page you are looking for does not exist.">
+  <meta property="og:url" content="http://localhost:3000/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Think Ameer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Page not found">
+  <meta name="twitter:description" content="The page you are looking for does not exist.">
+
+  <!-- Feeds -->
+  <link rel="alternate" type="application/rss+xml" title="Think Ameer RSS" href="http://localhost:3000/rss.xml">
+
+  <!-- Theme: prevent flash -->
+  <script>
+  (function(){
+    var t = localStorage.getItem('theme');
+    if (!t) t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Think Ameer","url":"http://localhost:3000"}</script>
+
+  <!-- Analytics (Umami) -->
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/writing/">Writing</a>
+        <a href="/now/">Now</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="error-page">
+  <h1>404</h1>
+  <p>This page doesn't exist — or maybe it moved.</p>
+  <p><a href="/">Go back home</a></p>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Ameer</span>
+      <ul class="footer-links">
+        <li><a href="http://localhost:3000/rss.xml">RSS</a></li>
+        <li><a href="http://localhost:3000/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

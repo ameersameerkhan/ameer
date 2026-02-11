@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' 'unsafe-inline' ; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
+  <title>Visual Storytelling — Think Ameer</title>
+  <meta name="description" content="How images enhance written content and make ideas more accessible to readers.">
+  <link rel="canonical" href="http://localhost:3000/posts/visual-storytelling/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Visual Storytelling">
+  <meta property="og:description" content="How images enhance written content and make ideas more accessible to readers.">
+  <meta property="og:url" content="http://localhost:3000/posts/visual-storytelling/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Think Ameer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Visual Storytelling">
+  <meta name="twitter:description" content="How images enhance written content and make ideas more accessible to readers.">
+
+  <!-- Feeds -->
+  <link rel="alternate" type="application/rss+xml" title="Think Ameer RSS" href="http://localhost:3000/rss.xml">
+
+  <!-- Theme: prevent flash -->
+  <script>
+  (function(){
+    var t = localStorage.getItem('theme');
+    if (!t) t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Think Ameer","url":"http://localhost:3000"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Visual Storytelling","datePublished":"2026-02-11","author":{"@type":"Person","name":"Ameer","url":"http://localhost:3000/about/"},"mainEntityOfPage":"http://localhost:3000/posts/visual-storytelling/"}</script>
+
+  <!-- Analytics (Umami) -->
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../../">Home</a>
+        <a href="../../about/">About</a>
+        <a href="../../writing/">Writing</a>
+        <a href="../../now/">Now</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+  <header>
+    <h1>Visual Storytelling</h1>
+    <div class="post-meta">
+      <time datetime="2026-02-11">February 11, 2026</time>
+      
+      <span class="reading-time">2 min read</span>
+    </div>
+    <ul class="tags"><li class="tag">design</li><li class="tag">writing</li><li class="tag">communication</li></ul>
+  </header>
+  <div class="prose">
+    <p>Images give writing shape. A well-placed diagram can explain in seconds what a paragraph takes a minute to convey. This post shows how to use images in your posts and offers a few practical guidelines for doing it well.</p>
+<h2>Key points</h2>
+<ul><li>Images should support the text, not replace it</li>
+<li>Always write meaningful alt text for accessibility</li>
+<li>Use absolute paths from the site root for reliability</li>
+<li>Optimise file sizes before committing</li></ul>
+<h2>Adding an image</h2>
+<p>The standard Markdown syntax works:</p>
+<p><img src="/assets/images/placeholder.svg" alt="A sample placeholder image" loading="lazy"></p>
+<p>Place your image files in the <code>assets/images/</code> folder and reference them with an absolute path starting from <code>/</code>. The build script copies everything in that folder into the published site automatically.</p>
+<h2>Diagrams and figures</h2>
+<p>Diagrams are especially useful for showing how parts of a system relate to each other. Here is a simple diagram of this site's build pipeline:</p>
+<p><img src="/assets/images/diagram.svg" alt="Diagram showing the build pipeline from Markdown to static HTML" loading="lazy"></p>
+<p><em>Figure 1: Markdown files pass through the build script and become static HTML in the docs folder.</em></p>
+<p>The italic line below the image acts as a caption. There is no special caption syntax in Markdown, but a simple <code><em>italic paragraph</em></code> directly after the image works well visually.</p>
+<h2>Best practices</h2>
+<p>A few guidelines worth keeping in mind:</p>
+<ol><li><strong>Write descriptive alt text.</strong> Screen readers rely on it, and search engines use it to understand your images. Describe what the image shows, not just what it is.</li>
+<li><strong>Optimise before committing.</strong> Run images through a tool like Squoosh or ImageOptim. Smaller files mean faster pages.</li>
+<li><strong>Choose the right format.</strong> SVG for diagrams and icons. WebP for photographs. PNG when you need transparency with sharp edges.</li>
+<li><strong>Keep images relevant.</strong> Every image should earn its place. Decorative images that add no information slow the page down and distract readers.</li></ol>
+<h2>Image paths</h2>
+<p>Since posts live at <code>/posts/&lt;slug&gt;/</code>, you might wonder whether to use relative or absolute paths. <strong>Absolute paths are simpler and more reliable:</strong></p>
+<ul><li><code>/assets/images/photo.jpg</code> works from any page depth</li>
+<li><code>../../assets/images/photo.jpg</code> breaks if you move the content</li></ul>
+<p>Stick with absolute paths starting from <code>/</code> and you will never have a broken image.</p>
+<hr>
+<p>Good visual storytelling is restraint. Use images when they clarify. Skip them when words are enough.</p>
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Ameer</span>
+      <ul class="footer-links">
+        <li><a href="http://localhost:3000/rss.xml">RSS</a></li>
+        <li><a href="http://localhost:3000/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

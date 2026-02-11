@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' 'unsafe-inline' ; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
+  <title>Building in Public — Think Ameer</title>
+  <meta name="description" content="Why sharing your work before it is finished is one of the most powerful ways to learn and grow.">
+  <link rel="canonical" href="http://localhost:3000/posts/building-in-public/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Building in Public">
+  <meta property="og:description" content="Why sharing your work before it is finished is one of the most powerful ways to learn and grow.">
+  <meta property="og:url" content="http://localhost:3000/posts/building-in-public/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Think Ameer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Building in Public">
+  <meta name="twitter:description" content="Why sharing your work before it is finished is one of the most powerful ways to learn and grow.">
+
+  <!-- Feeds -->
+  <link rel="alternate" type="application/rss+xml" title="Think Ameer RSS" href="http://localhost:3000/rss.xml">
+
+  <!-- Theme: prevent flash -->
+  <script>
+  (function(){
+    var t = localStorage.getItem('theme');
+    if (!t) t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Think Ameer","url":"http://localhost:3000"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Building in Public","datePublished":"2026-02-01","author":{"@type":"Person","name":"Ameer","url":"http://localhost:3000/about/"},"mainEntityOfPage":"http://localhost:3000/posts/building-in-public/"}</script>
+
+  <!-- Analytics (Umami) -->
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../../">Home</a>
+        <a href="../../about/">About</a>
+        <a href="../../writing/">Writing</a>
+        <a href="../../now/">Now</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">&#9790;</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+  <header>
+    <h1>Building in Public</h1>
+    <div class="post-meta">
+      <time datetime="2026-02-01">February 1, 2026</time>
+      
+      <span class="reading-time">2 min read</span>
+    </div>
+    <ul class="tags"><li class="tag">building</li><li class="tag">learning</li><li class="tag">creativity</li></ul>
+  </header>
+  <div class="prose">
+    <p>Building in public means sharing your process, not just the polished result. It is a commitment to transparency that accelerates learning, invites collaboration, and builds trust with an audience over time. This post explains why I do it and how you can start.</p>
+<h2>Key points</h2>
+<ul><li>Sharing work-in-progress forces clarity of thought</li>
+<li>Feedback loops shorten when you build in the open</li>
+<li>Imperfection is a feature, not a bug</li></ul>
+<h2>The case for transparency</h2>
+<p>Most creators wait until something is finished before they show it to the world. That instinct is understandable — nobody wants to be judged on a half-built thing. But waiting has a cost.</p>
+<p>When you keep your work hidden, you lose the chance for <strong>early feedback</strong>. You lose the accountability that comes from saying <em>&quot;I'm working on this&quot;</em> where others can see. And you lose the compounding benefit of documenting your journey as it happens.</p>
+<blockquote><p>The best time to share your work is before you think it's ready.</p></blockquote>
+<h2>How to start</h2>
+<p>Starting is simpler than it sounds:</p>
+<ol><li>Pick a project you care about</li>
+<li>Write a short update every time you make progress</li>
+<li>Publish it somewhere — a blog, a social post, a note</li></ol>
+<p>The format does not matter. What matters is the habit of <strong>reflecting and sharing</strong> as you go.</p>
+<h2>A practical example</h2>
+<p>Here is a tiny script that logs today's date — the kind of small thing you might share while learning:</p>
+<pre><code class="language-javascript">const today = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+console.log(`Today is ${today}`);</code></pre>
+<p>Nothing groundbreaking, but sharing it signals that you are learning, building, and moving forward.</p>
+<hr>
+<p>Building in public is not about performance. It is about practice. Start small, stay consistent, and watch what happens.</p>
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Ameer</span>
+      <ul class="footer-links">
+        <li><a href="http://localhost:3000/rss.xml">RSS</a></li>
+        <li><a href="http://localhost:3000/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

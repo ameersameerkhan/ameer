@@ -1,0 +1,14 @@
+<article>
+  <header>
+    <h1>{{post_title}}</h1>
+    <div class="post-meta">
+      <time datetime="{{date}}">{{date_display}}</time>
+      {{updated_display}}
+      <span class="reading-time">{{reading_time}} min read</span>
+    </div>
+    {{tags_html}}
+  </header>
+  <div class="prose">
+    {{post_body}}
+  </div>
+</article>
