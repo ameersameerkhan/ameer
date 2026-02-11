@@ -249,6 +249,51 @@ function parseInlineBlocks(lines) {
   return groups.map(g => '<p>' + inlineFormat(g.join(' ')) + '</p>').join('\n');
 }
 
+function getImageDimensions(src) {
+  // Resolve src to file path relative to project root
+  const filePath = src.startsWith('/')
+    ? join(ASSETS, src.replace(/^\/assets\//, ''))
+    : null;
+  if (!filePath || !existsSync(filePath)) return null;
+
+  try {
+    const buf = readFileSync(filePath);
+
+    // PNG: width at bytes 16-19, height at 20-23
+    if (buf[0] === 0x89 && buf[1] === 0x50) {
+      return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+    }
+
+    // WebP: RIFF header, then VP8 variants
+    if (buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+      if (buf.toString('ascii', 12, 16) === 'VP8 ') {
+        return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff };
+      }
+      if (buf.toString('ascii', 12, 16) === 'VP8L') {
+        const bits = buf.readUInt32LE(21);
+        return { w: (bits & 0x3fff) + 1, h: ((bits >> 14) & 0x3fff) + 1 };
+      }
+      if (buf.toString('ascii', 12, 16) === 'VP8X') {
+        return {
+          w: ((buf[24] | (buf[25] << 8) | (buf[26] << 16)) + 1),
+          h: ((buf[27] | (buf[28] << 8) | (buf[29] << 16)) + 1),
+        };
+      }
+    }
+
+    // SVG: try viewBox or width/height attributes
+    const head = buf.toString('utf8', 0, Math.min(buf.length, 500));
+    if (head.includes('<svg')) {
+      const vb = head.match(/viewBox=["'](\d+)\s+(\d+)\s+(\d+)\s+(\d+)["']/);
+      if (vb) return { w: parseInt(vb[3]), h: parseInt(vb[4]) };
+    }
+  } catch {
+    // Graceful fallback
+  }
+
+  return null;
+}
+
 function isSafeUrl(url) {
   const trimmed = url.trim().toLowerCase();
   return (
@@ -270,7 +315,9 @@ function inlineFormat(text) {
   // Images – ![alt](url) — must come before link replacement
   text = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (_, alt, url) {
     if (isSafeUrl(url)) {
-      return '<img src="' + url + '" alt="' + alt + '" loading="lazy">';
+      const dims = getImageDimensions(url);
+      const dimAttrs = dims ? ' width="' + dims.w + '" height="' + dims.h + '"' : '';
+      return '<img src="' + url + '" alt="' + alt + '"' + dimAttrs + ' loading="lazy">';
     }
     return alt; // strip the image, keep the alt text
   });
