@@ -4,6 +4,7 @@ date: 2026-02-01
 description: "Why sharing your work before it is finished is one of the most powerful ways to learn and grow."
 tags: [building, learning, creativity]
 slug: building-in-public
+related: [on-thinking-slowly, visual-storytelling]
 ---
 
 Building in public means sharing your process, not just the polished result. It is a commitment to transparency that accelerates learning, invites collaboration, and builds trust with an audience over time. This post explains why I do it and how you can start.

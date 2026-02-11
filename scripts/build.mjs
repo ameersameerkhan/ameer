@@ -409,6 +409,7 @@ function renderPage(baseTemplate, contentHtml, vars) {
     umami_csp: umamiCspOrigin(),
     content: contentHtml,
     og_type: vars.og_type || 'website',
+    og_image: vars.og_image || `${SITE_URL}/assets/images/og-image.png`,
     ...vars,
     // Override with escaped versions
     title: safeTitle,
@@ -491,6 +492,24 @@ for (const post of posts) {
     ? `<span>Updated <time datetime="${post.meta.updated}">${displayDate(post.meta.updated)}</time></span>`
     : '';
 
+  // Build related reading section
+  let relatedHtml = '';
+  if (Array.isArray(post.meta.related) && post.meta.related.length) {
+    const relatedLinks = post.meta.related
+      .map(slug => posts.find(p => p.meta.slug === slug))
+      .filter(Boolean)
+      .map(p => `<li><a href="/posts/${p.meta.slug}/">${escapeHtml(p.meta.title)}</a></li>`)
+      .join('\n      ');
+    if (relatedLinks) {
+      relatedHtml = `<nav class="related-reading" aria-label="Related reading">
+  <h2>Related reading</h2>
+  <ul>
+      ${relatedLinks}
+  </ul>
+</nav>`;
+    }
+  }
+
   const contentHtml = render(postTemplate, {
     post_title: escapeHtml(post.meta.title),
     date: post.meta.date,
@@ -499,6 +518,7 @@ for (const post of posts) {
     reading_time: post.readingTime.toString(),
     tags_html: tagsHtml,
     post_body: post.html,
+    related_html: relatedHtml,
   });
 
   const page = renderPage(baseTemplate, contentHtml, {

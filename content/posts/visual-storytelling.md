@@ -4,6 +4,7 @@ date: 2026-02-11
 description: "How images enhance written content and make ideas more accessible to readers."
 tags: [design, writing, communication]
 slug: visual-storytelling
+related: [building-in-public, on-thinking-slowly]
 ---
 
 Images give writing shape. A well-placed diagram can explain in seconds what a paragraph takes a minute to convey. This post shows how to use images in your posts and offers a few practical guidelines for doing it well.

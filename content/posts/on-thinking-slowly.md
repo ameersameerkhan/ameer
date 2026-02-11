@@ -5,6 +5,7 @@ updated: 2026-02-10
 description: "Fast decisions feel productive but slow thinking produces better outcomes in almost every domain."
 tags: [thinking, strategy, productivity, decisions]
 slug: on-thinking-slowly
+related: [building-in-public, visual-storytelling]
 ---
 
 We live in a culture that rewards speed. Respond faster, ship sooner, decide now. But the most consequential decisions — the ones that shape careers, companies, and lives — almost always benefit from slowing down. This post is a case for thinking slowly and deliberately.

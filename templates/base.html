@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/images/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'none'; script-src 'self' 'unsafe-inline' {{umami_csp}}; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
   <title>{{title}}</title>
@@ -17,9 +20,11 @@
   <meta property="og:site_name" content="{{site_title}}">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{og_title}}">
   <meta name="twitter:description" content="{{og_description}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta name="twitter:image" content="{{og_image}}">
 
   <!-- Feeds -->
   <link rel="alternate" type="application/rss+xml" title="{{site_title}} RSS" href="{{site_url}}/rss.xml">
