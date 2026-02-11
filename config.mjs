@@ -3,9 +3,9 @@
 // The build script imports these and bakes them into static HTML.
 
 export const SITE_URL = 'http://localhost:3000';           // ← your custom domain
-export const SITE_TITLE = 'Think Ameer';
+export const SITE_TITLE = 'Hey Ameer';
 export const SITE_DESCRIPTION = 'Personal writing on thinking, building, and learning in public.';
-export const AUTHOR_NAME = 'Ameer';
+export const AUTHOR_NAME = 'ameer';
 export const AUTHOR_URL = 'http://localhost:3000/about/';  // ← matches SITE_URL
 
 // ── Analytics (Umami) ──────────────────────────────────────────────

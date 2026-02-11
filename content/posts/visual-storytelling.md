@@ -19,7 +19,7 @@ Images give writing shape. A well-placed diagram can explain in seconds what a p
 
 The standard Markdown syntax works:
 
-![A sample placeholder image](/assets/images/placeholder.svg)
+![A sample placeholder image](/assets/images/sample.webp)
 
 Place your image files in the `assets/images/` folder and reference them with an absolute path starting from `/`. The build script copies everything in that folder into the published site automatically.
 
