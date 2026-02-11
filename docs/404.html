@@ -7,7 +7,7 @@
   <link rel="icon" href="/assets/images/favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; script-src 'self' 'unsafe-inline' ; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
+        content="default-src 'none'; script-src 'self' ; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
   <title>Page not found — Hey Ameer</title>
   <meta name="description" content="The page you are looking for does not exist.">
   <link rel="canonical" href="https://heyameer.com/404.html">
@@ -30,13 +30,7 @@
   <link rel="alternate" type="application/rss+xml" title="Hey Ameer RSS" href="https://heyameer.com/rss.xml">
 
   <!-- Theme: prevent flash -->
-  <script>
-  (function(){
-    var t = localStorage.getItem('theme');
-    if (!t) t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', t);
-  })();
-  </script>
+  <script src="/assets/js/theme-init.js"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css">

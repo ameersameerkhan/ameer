@@ -7,7 +7,7 @@
   <link rel="icon" href="/assets/images/favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; script-src 'self' 'unsafe-inline' {{umami_csp}}; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
+        content="default-src 'none'; script-src 'self' {{umami_csp}}; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none';">
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
   <link rel="canonical" href="{{canonical}}">
@@ -30,13 +30,7 @@
   <link rel="alternate" type="application/rss+xml" title="{{site_title}} RSS" href="{{site_url}}/rss.xml">
 
   <!-- Theme: prevent flash -->
-  <script>
-  (function(){
-    var t = localStorage.getItem('theme');
-    if (!t) t = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', t);
-  })();
-  </script>
+  <script src="/assets/js/theme-init.js"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{css_path}}">

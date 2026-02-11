@@ -295,14 +295,16 @@ function getImageDimensions(src) {
 }
 
 function isSafeUrl(url) {
-  const trimmed = url.trim().toLowerCase();
-  return (
-    trimmed.startsWith('http://') ||
-    trimmed.startsWith('https://') ||
-    trimmed.startsWith('mailto:') ||
-    trimmed.startsWith('#') ||
-    trimmed.startsWith('/')
-  );
+  const trimmed = url.trim();
+  // Allow relative paths and fragments
+  if (trimmed.startsWith('/') || trimmed.startsWith('#')) return true;
+  // Parse as URL and allow only safe schemes
+  try {
+    const parsed = new URL(trimmed);
+    return ['http:', 'https:', 'mailto:'].includes(parsed.protocol);
+  } catch {
+    return false;
+  }
 }
 
 function inlineFormat(text) {
@@ -315,16 +317,18 @@ function inlineFormat(text) {
   // Images – ![alt](url) — must come before link replacement
   text = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (_, alt, url) {
     if (isSafeUrl(url)) {
+      const safeUrl = escapeHtml(url);
+      const safeAlt = escapeHtml(alt);
       const dims = getImageDimensions(url);
       const dimAttrs = dims ? ' width="' + dims.w + '" height="' + dims.h + '"' : '';
-      return '<img src="' + url + '" alt="' + alt + '"' + dimAttrs + ' loading="lazy">';
+      return '<img src="' + safeUrl + '" alt="' + safeAlt + '"' + dimAttrs + ' loading="lazy">';
     }
-    return alt; // strip the image, keep the alt text
+    return escapeHtml(alt); // strip the image, keep the alt text
   });
   // Links – [SECURITY] only allow safe URL protocols
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (_, label, url) {
     if (isSafeUrl(url)) {
-      return '<a href="' + url + '">' + label + '</a>';
+      return '<a href="' + escapeHtml(url) + '">' + label + '</a>';
     }
     return label; // strip the link, keep the text
   });
@@ -700,6 +704,7 @@ mkdirSync(join(DOCS, 'assets', 'css'), { recursive: true });
 mkdirSync(join(DOCS, 'assets', 'js'), { recursive: true });
 cpSync(join(ASSETS, 'css', 'styles.css'), join(DOCS, 'assets', 'css', 'styles.css'));
 cpSync(join(ASSETS, 'js', 'main.js'), join(DOCS, 'assets', 'js', 'main.js'));
+cpSync(join(ASSETS, 'js', 'theme-init.js'), join(DOCS, 'assets', 'js', 'theme-init.js'));
 // Copy images folder if it exists
 if (existsSync(join(ASSETS, 'images'))) {
   cpSync(join(ASSETS, 'images'), join(DOCS, 'assets', 'images'), { recursive: true });
