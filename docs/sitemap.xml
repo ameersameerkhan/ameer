@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/</loc>
+    <loc>https://heyameer.com/</loc>
     <lastmod>2026-02-11</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/about/</loc>
+    <loc>https://heyameer.com/about/</loc>
     <lastmod>2026-02-11</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/writing/</loc>
+    <loc>https://heyameer.com/writing/</loc>
     <lastmod>2026-02-11</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/now/</loc>
+    <loc>https://heyameer.com/now/</loc>
     <lastmod>2026-02-11</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/posts/visual-storytelling/</loc>
+    <loc>https://heyameer.com/posts/visual-storytelling/</loc>
     <lastmod>2026-02-11</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/posts/building-in-public/</loc>
+    <loc>https://heyameer.com/posts/building-in-public/</loc>
     <lastmod>2026-02-01</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/posts/on-thinking-slowly/</loc>
+    <loc>https://heyameer.com/posts/on-thinking-slowly/</loc>
     <lastmod>2026-02-10</lastmod>
   </url>
 </urlset>

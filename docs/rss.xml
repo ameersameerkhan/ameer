@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hey Ameer</title>
-    <link>http://localhost:3000/</link>
+    <link>https://heyameer.com/</link>
     <description>Personal writing on thinking, building, and learning in public.</description>
     <language>en</language>
-    <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://heyameer.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Visual Storytelling</title>
-      <link>http://localhost:3000/posts/visual-storytelling/</link>
-      <guid isPermaLink="true">http://localhost:3000/posts/visual-storytelling/</guid>
+      <link>https://heyameer.com/posts/visual-storytelling/</link>
+      <guid isPermaLink="true">https://heyameer.com/posts/visual-storytelling/</guid>
       <pubDate>Wed, 11 Feb 2026 12:00:00 GMT</pubDate>
       <description>How images enhance written content and make ideas more accessible to readers.</description>
     </item>
     <item>
       <title>Building in Public</title>
-      <link>http://localhost:3000/posts/building-in-public/</link>
-      <guid isPermaLink="true">http://localhost:3000/posts/building-in-public/</guid>
+      <link>https://heyameer.com/posts/building-in-public/</link>
+      <guid isPermaLink="true">https://heyameer.com/posts/building-in-public/</guid>
       <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
       <description>Why sharing your work before it is finished is one of the most powerful ways to learn and grow.</description>
     </item>
     <item>
       <title>On Thinking Slowly</title>
-      <link>http://localhost:3000/posts/on-thinking-slowly/</link>
-      <guid isPermaLink="true">http://localhost:3000/posts/on-thinking-slowly/</guid>
+      <link>https://heyameer.com/posts/on-thinking-slowly/</link>
+      <guid isPermaLink="true">https://heyameer.com/posts/on-thinking-slowly/</guid>
       <pubDate>Thu, 15 Jan 2026 12:00:00 GMT</pubDate>
       <description>Fast decisions feel productive but slow thinking produces better outcomes in almost every domain.</description>
     </item>

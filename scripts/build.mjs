@@ -361,7 +361,7 @@ function postListItemHtml(post) {
     ? '<ul class="tags">' + post.meta.tags.map(t => `<li class="tag">${escapeHtml(t)}</li>`).join('') + '</ul>'
     : '';
   return `<li class="post-list-item">
-  <h2><a href="${SITE_URL}/posts/${post.meta.slug}/">${escapeHtml(post.meta.title)}</a></h2>
+  <h2><a href="/posts/${post.meta.slug}/">${escapeHtml(post.meta.title)}</a></h2>
   <div class="post-meta">
     <time datetime="${post.meta.date}">${displayDate(post.meta.date)}</time>
   </div>
@@ -606,7 +606,8 @@ if (existsSync(join(ASSETS, 'images'))) {
   cpSync(join(ASSETS, 'images'), join(DOCS, 'assets', 'images'), { recursive: true });
 }
 
-// 15. CNAME
-write(join(DOCS, 'CNAME'), 'example.com\n');
+// 15. CNAME — derive domain from SITE_URL (strips protocol)
+const cnameDomain = SITE_URL.replace(/^https?:\/\//, '');
+write(join(DOCS, 'CNAME'), cnameDomain + '\n');
 
 console.log(`Done. ${posts.length} post(s) built → /docs`);
