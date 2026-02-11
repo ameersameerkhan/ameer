@@ -7,6 +7,7 @@ slug: your-post-slug
 # updated: YYYY-MM-DD
 # draft: true
 # allow_html: false
+# related: [slug-one, slug-two]
 ---
 
 A direct summary of this post in 2 to 4 sentences. This paragraph should

@@ -21,7 +21,30 @@ Everything is optimised for the production of quality thought and for readabilit
 
 **Live at:** [heyameer.com](https://heyameer.com)
 
-Static HTML, CSS, vanilla JS. Zero dependencies. Built with `node scripts/build.mjs` and served from the `docs/` folder via GitHub Pages.
+Static HTML, CSS, vanilla JS. Zero runtime dependencies. Built with `node scripts/build.mjs` and served from the `docs/` folder via GitHub Pages.
+
+### Project structure
+
+```
+thinkameer/
+├── config.mjs                 # Site-wide configuration
+├── package.json               # Build + preview scripts
+├── scripts/
+│   └── build.mjs              # Zero-dep Node build script
+├── content/
+│   ├── posts/                 # Markdown posts (one file per post)
+│   └── templates/
+│       └── post.md            # New-post template
+├── templates/                 # HTML page templates
+├── assets/
+│   ├── css/styles.css         # Single stylesheet
+│   ├── js/
+│   │   ├── main.js            # Theme toggle
+│   │   └── theme-init.js      # Theme detection (loaded before CSS)
+│   ├── fonts/                 # Self-hosted WOFF2 variable fonts
+│   └── images/                # Favicon, OG card, post images
+└── docs/                      # Build output (served by GitHub Pages)
+```
 
 ## License
 
